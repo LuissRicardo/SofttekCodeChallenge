@@ -58,3 +58,10 @@ You can use the following endpoints:
 1. [localhost:5000/api/customer_order_status](http://localhost:5000/api/customer_order_status)
 2. [localhost:5000/api/orders_by_season](http://localhost:5000/api/orders_by_season)
 3. [localhost:5000/api/detecting_change](http://localhost:5000/api/detecting_change)
+
+## Dependencies
+
+As of now, the only (direct) dependency is [Flask](https://flask.palletsprojects.com/en/2.0.x/). When you install the
+dependencies in the virtual environment, it is installed along with its dependencies.
+
+
