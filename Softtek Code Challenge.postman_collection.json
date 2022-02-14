@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "060447d2-ad75-475f-9885-3a30c5e74019",
+		"name": "Softtek Code Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/customer_order_status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test data of the response\", function () {\r",
+							"    pm.expect(jsonData).to.be.an(\"object\");\r",
+							"    \r",
+							"    pm.expect(jsonData.category).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.category).to.be.equal(\"success\");\r",
+							"    \r",
+							"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.message).to.be.equal(\"4 status orders retrieved.\");\r",
+							"    \r",
+							"    pm.expect(jsonData.status).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.status).to.be.equal(200);\r",
+							"    \r",
+							"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData.data.length).to.be.equal(4);\r",
+							"    pm.expect(jsonData.data).to.deep.equal([\r",
+							"        {\r",
+							"            \"order_number\": \"ORD_1567\",\r",
+							"            \"status\": \"PENDING\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"order_number\": \"ORD_1234\",\r",
+							"            \"status\": \"SHIPPED\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"order_number\": \"ORD_9834\",\r",
+							"            \"status\": \"SHIPPED\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"order_number\": \"ORD_7654\",\r",
+							"            \"status\": \"CANCELLED\"\r",
+							"        }\r",
+							"    ]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/customer_order_status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"customer_order_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/orders_by_season",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test data of the response\", function () {\r",
+							"    pm.expect(jsonData).to.be.an(\"object\");\r",
+							"    \r",
+							"    pm.expect(jsonData.category).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.category).to.be.equal(\"success\");\r",
+							"    \r",
+							"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.message).to.be.equal(\"8 orders retrieved.\");\r",
+							"    \r",
+							"    pm.expect(jsonData.status).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.status).to.be.equal(200);\r",
+							"    \r",
+							"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData.data.length).to.be.equal(8);\r",
+							"    pm.expect(jsonData.data).to.deep.equal([\r",
+							"        {\r",
+							"            \"ord_id\": \"113-8909896-6940269\",\r",
+							"            \"season\": \"Fall\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"114-0291773-7262677\",\r",
+							"            \"season\": \"Winter\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"114-0291773-7262697\",\r",
+							"            \"season\": \"Fall\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"114-9900513-7761000\",\r",
+							"            \"season\": \"Fall\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"112-5230502-8173028\",\r",
+							"            \"season\": \"Winter\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"112-7714081-3300254\",\r",
+							"            \"season\": \"Spring\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"114-5384551-1465853\",\r",
+							"            \"season\": \"Spring\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"ord_id\": \"114-7232801-4607440\",\r",
+							"            \"season\": \"Fall\"\r",
+							"        }\r",
+							"    ]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/orders_by_season",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders_by_season"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/detecting_change",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test data of the response\", function () {\r",
+							"    pm.expect(jsonData).to.be.an(\"object\");\r",
+							"    \r",
+							"    pm.expect(jsonData.category).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.category).to.be.equal(\"success\");\r",
+							"    \r",
+							"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.message).to.be.equal(\"3 weather changes detected.\");\r",
+							"    \r",
+							"    pm.expect(jsonData.status).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.status).to.be.equal(200);\r",
+							"    \r",
+							"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData.data.length).to.be.equal(3);\r",
+							"    pm.expect(jsonData.data).to.deep.equal([\r",
+							"        {\r",
+							"            \"date\": \"2020-01-02\",\r",
+							"            \"was_rainy\": \"True\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"date\": \"2020-01-06\",\r",
+							"            \"was_rainy\": \"True\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"date\": \"2020-01-08\",\r",
+							"            \"was_rainy\": \"True\"\r",
+							"        }\r",
+							"    ]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/detecting_change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"detecting_change"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

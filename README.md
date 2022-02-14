@@ -64,4 +64,6 @@ You can use the following endpoints:
 As of now, the only (direct) dependency is [Flask](https://flask.palletsprojects.com/en/2.0.x/). When you install the
 dependencies in the virtual environment, it is installed along with its dependencies.
 
+## Postman Collection
 
+You can import [this file](./Softtek%20Code%20Challenge.postman_collection.json) into Postman. 
